@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totally Normal Page</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        #scare-img {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Click anywhere to continue...</h1>
+
+    <img id="scare-img" src="https://i.imgur.com/ZK2y77n.jpg" alt="Scary Face">
+    <audio id="scare-audio" src="https://www.myinstants.com/media/sounds/screaming-goat.mp3"></audio>
+
+    <script>
+        document.body.addEventListener("click", function() {
+            document.body.style.backgroundColor = "black";
+            document.body.innerHTML = "";
+            
+            let img = document.createElement("img");
+            img.src = "https://i.imgur.com/ZK2y77n.jpg";
+            img.style.width = "100%";
+            document.body.appendChild(img);
+
+            let audio = document.getElementById("scare-audio");
+            audio.play();
+        });
+    </script>
+
+</body>
+</html>
